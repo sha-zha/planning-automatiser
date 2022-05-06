@@ -74,3 +74,6 @@ main code {
   font-size: 16px;
   background: #e6e2ff;
 }
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
