@@ -20,3 +20,10 @@ les heures :
 - F => lundi au jeudi :  8H-15h30 et vendredi 8h-15h00 
 - CS => lundi au jeudi : 10h-16h30 et vendredi 9h30-16h30 
 
+
+## User Story 
+
+- En tant qu'admin je peux voir le planning 
+- En tant qu'admin je peux gérer les salariés 
+- En tant qu'admin je peux gérer les postes 
+- En tant qu'admin je peux exporter le planning sous format csv
