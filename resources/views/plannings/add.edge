@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AdonisJS - A fully featured web framework for Node.js</title>
+  @entryPointStyles('app')
+  @entryPointScripts('app')
+</head>
+<body>
+
+<main>
+  <section>
+    <h2 class="title text-blue-600">Planning  secrétaire </h2>
+    <form action="{{route('planning.store')}}" method="post" class="space-y-6 flex flex-col w-full">
+      {{ csrfField() }}
+      <label for="secretary">Secrétaire</label>
+      <select name="secretary" id="secretary">
+        <option value="0" selected> Choisir sa secrétaire</option>
+        @each(secretary in secretaries )
+        <option value="{{secretary.id}}"> {{secretary.lastname}} {{secretary.name}}</option>
+        @end
+      </select>
+
+
+      <label for="days">Jours présents</label>
+      <div id="days">
+        @each ((day,index) in days)
+        <div class="flex-inline">
+          <input type="checkbox" name="days[]" value="{{ index}}">{{day}}
+        </div>
+
+        @end
+      </div>
+      <label for="lastPoste">Dernier poste</label>
+
+      <select name="poste" id="lastPoste">
+        <option value="0">Choisir le dernier poste</option>
+
+        @each(poste in postes)
+        <option value="{{poste.id}}">{{ poste.label}}</option>
+        @end
+      </select>
+
+      <input type="submit" value="valider">
+    </form>
+
+  </section>
+</main>
+</body>
+</html>

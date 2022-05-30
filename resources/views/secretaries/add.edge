@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AdonisJS - A fully featured web framework for Node.js</title>
+  @entryPointStyles('app')
+  @entryPointScripts('app')
+</head>
+<body>
+
+<main>
+  <section>
+    <h2 class="title text-blue-600">Ajouter une secrétaire </h2>
+    <form action="{{route('secretary.store')}}" method="post" class="space-y-6 flex flex-col w-full">
+      {{ csrfField() }}
+      <label for="name">Prénom</label>
+      <input type="text" name="name" id="name">
+      <label for="lastname">Nom</label>
+      <input type="text" name="lastname" id="lastname">
+      <input type="submit" value="valider">
+    </form>
+
+  </section>
+</main>
+</body>
+</html>

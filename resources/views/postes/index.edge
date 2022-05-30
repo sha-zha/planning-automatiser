@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AdonisJS - A fully featured web framework for Node.js</title>
+  @entryPointStyles('app')
+  @entryPointScripts('app')
+</head>
+<body>
+
+<main class="flex flex-col">
+  <div class="flex flex-row w-full">
+    <a href="{{route('poste.add')}}">ajouter un poste</a>
+  </div>
+  <div class="flex flex-row w-full space-x-6">
+
+        @each ( poste in postes)
+        <p>{{ poste.label}} </p>
+        @end
+  </div>
+</main>
+</body>
+</html>
