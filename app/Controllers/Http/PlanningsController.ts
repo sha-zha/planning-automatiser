@@ -13,7 +13,7 @@ export default class PlanningsController {
     return view.render('plannings/add', {postes: poste, secretaries: secretary, days: days});
   }
 
-  public async store({request, response}: HttpContextContract){
+  public async store({request}: HttpContextContract){
 
     const lastPoste = request.input('poste');
     const defaultOrder = await this.defaultOrder(lastPoste-1);
@@ -26,17 +26,15 @@ export default class PlanningsController {
   public async defaultOrder(lastPoste){
 
     const order = Config.get('site.defaultOrderPoste');
-    const poste = [];
-    const other = [];
+    let poste!: Array<String>;
+    let other!: Array<String>;
 
     if(parseInt(lastPoste)+1 === order.length){
       order.push(order[0]);
-
       return order;
-
     }
 
-    order.forEach((item,index) => {
+    order.forEach( (item:string,index:number):void => {
 
         if(index > lastPoste){
           poste.push(item);
