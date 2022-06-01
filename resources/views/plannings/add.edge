@@ -25,12 +25,12 @@
 
       <label for="days">Jours présents</label>
       <div id="days">
-        @each ((day,index) in days)
-        <div class="flex-inline">
-          <input type="checkbox" name="days[]" value="{{ index}}">{{day}}
-        </div>
 
-        @end
+        <div class="flex-inline">
+          <input type="radio" name="days" value="days">Tous les jours
+          <input type="radio" name="days" value="daysUma"> Présence UMA
+          <input type="radio" name="days" value="daysPneumo"> Présence Pneumo
+        </div>
       </div>
       <label for="lastPoste">Dernier poste</label>
 

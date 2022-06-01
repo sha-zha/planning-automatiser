@@ -6,5 +6,5 @@ export const days = [
   'vendredi',
 ];
 
-export const daysUma = [1,3,4];
-export const daysPneumo = [0,1];
+export const daysUma = ['1','3','4'];
+export const daysPneumo = ['0','1'];

@@ -4,3 +4,6 @@ export const defaultOrderPoste = [
   'F',
   'CS',
 ];
+
+export const notThisPoste = ['CS'];
+export  const notThisDay = ['1'];
